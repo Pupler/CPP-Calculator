@@ -1,3 +1,25 @@
-# Cpp-Calculator
+# 🧮 C++ Calculator
 
-A simple console-based calculator written in C++
+A simple console calculator with professional code structure.
+
+## ✨ Features
+- ➕➖✖️➗ Basic arithmetic operations  
+- ♾️ Division by zero returns infinity
+- 🔄 Continuous operation loop
+- 🛡️ Input validation & error handling
+- 🧹 Clean console interface
+
+## 🚀 Getting started
+```bash
+# Clone the repository
+git clone https://github.com/Pupler/Cpp-Calculator.git
+cd Cpp-Calculator
+
+# Build with CMake
+mkdir build && cd build
+cmake ..
+make
+
+# Run the calculator
+./calculator
+```
