@@ -27,6 +27,9 @@ namespace calculator {
 
     bool run() {
         char continue_program = 'y';
+        char clear_console;
+
+        system("clear");
 
         while (continue_program == 'y' || continue_program == 'Y') {
             double firstNumber, secondNumber;
@@ -84,10 +87,12 @@ namespace calculator {
             cout << "Continue program?(y/n): ";
             cin >> continue_program;
 
+            system("clear");
+
             cin.ignore(1000, '\n');
         }
 
-        cout << "Chao!" << endl;
+        system("clear");
         return true;
     }
 }
