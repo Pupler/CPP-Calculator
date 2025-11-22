@@ -11,7 +11,15 @@ A simple console calculator with professional code structure.
 
 ## 🚀 Getting started
 ```bash
+# Clone the repository
+git clone https://github.com/Pupler/Cpp-Calculator.git
+cd Cpp-Calculator
+
+# Build with CMake
 mkdir build && cd build
-cmake .. && make
+cmake ..
+make
+
+# Run the calculator
 ./calculator
 ```
