@@ -45,3 +45,14 @@
 
 # Compiled program
 lox
+
+# Build directories
+build/
+*/build/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
