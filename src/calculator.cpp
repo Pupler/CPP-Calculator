@@ -131,7 +131,7 @@ namespace calculator {
 
         }
 
-        system("clear");
+        cout << "Closing program..." << endl;
         return true;
     }
 }
