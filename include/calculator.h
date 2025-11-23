@@ -4,6 +4,13 @@
 
 namespace calculator {
 
+    struct calculation {
+        double num1;
+        double num2;
+        char operation;
+        double result;
+    };
+
     double add(double a, double b);
 
     double subtract(double a, double b);
@@ -11,6 +18,8 @@ namespace calculator {
     double multiply(double a, double b);
 
     double divide(double a, double b);
+
+    void addToHistory(double num1, double num2, char operation, double result);
 
     bool run();
 }

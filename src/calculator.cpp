@@ -1,9 +1,12 @@
 #include "../include/calculator.h"
 #include <stdexcept>
 #include <limits>
+#include <vector>
 using namespace std;
 
 namespace calculator {
+
+    vector<calculation> history;
 
     double add(double a, double b) {
         return a + b;
@@ -23,6 +26,12 @@ namespace calculator {
         }
 
         return a / b;
+    }
+
+    void addToHistory(double num1, double num2, char operation, double result) {
+        history.push_back({num1, num2, operation, result});
+
+        cout << history.back().num1 << " " << history.back().operation << " " << history.back().num2 << " = " << history.back().result << endl;
     }
 
     bool run() {
@@ -66,6 +75,7 @@ namespace calculator {
                 case '+':
                     result = add(firstNumber, secondNumber);
                     cout << "Result: " << result << endl;
+                    // addToHistory(firstNumber, secondNumber, operation, result);
                     break;
                 case '-':
                     result = subtract(firstNumber, secondNumber);
