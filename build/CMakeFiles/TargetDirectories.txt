@@ -1,3 +1,0 @@
-/home/pupler33/Desktop/C++ Projects/Cpp-Calculator/build/CMakeFiles/calculator.dir
-/home/pupler33/Desktop/C++ Projects/Cpp-Calculator/build/CMakeFiles/edit_cache.dir
-/home/pupler33/Desktop/C++ Projects/Cpp-Calculator/build/CMakeFiles/rebuild_cache.dir
