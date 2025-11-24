@@ -135,11 +135,14 @@ namespace calculator {
                 case 2:
                     cout << "\n====LAST CALCULATIONS====" << endl;
                     showHistory();
-                    cout << "Clear history?(y/n): ";
-                    cin >> clear_history;
 
-                    if (clear_history == 'y' || clear_history == 'Y') {
-                        clearHistory();
+                    if (!history.empty()) {
+                        cout << "\nClear history?(y/n): ";
+                        cin >> clear_history;
+
+                        if (clear_history == 'y' || clear_history == 'Y') {
+                            clearHistory();
+                        }
                     }
 
                     cout << "\nContinue program?(y/n): ";
