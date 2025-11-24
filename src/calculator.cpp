@@ -38,8 +38,10 @@ namespace calculator {
             cout << "History is empty..." << endl;
             return;
         }
-        
-        cout << history.back().num1 << " " << history.back().operation << " " << history.back().num2 << " = " << history.back().result << endl;
+
+        for (int i = 0; i < history.size(); i++) {
+            cout << history[i].num1 << " " << history[i].operation << " " << history[i].num2 << " = " << history[i].result << endl;
+        }
     }
 
     bool run() {
