@@ -44,16 +44,21 @@ namespace calculator {
         }
     }
 
+    void clearHistory() {
+        history.clear();
+
+        cout << "History was cleaned!" << endl;
+    }
+
     bool run() {
         char continue_program = 'y';
-        char clear_console;
 
         system("clear");
 
         while (continue_program == 'y' || continue_program == 'Y') {
             int menuIndex;
             double firstNumber, secondNumber;
-            char operation;
+            char operation, clear_history;
 
             cout << "====C++ CALCULATOR====\n" << endl;
             cout << "Program menu:" << endl;
@@ -130,6 +135,12 @@ namespace calculator {
                 case 2:
                     cout << "\n====LAST CALCULATIONS====" << endl;
                     showHistory();
+                    cout << "Clear history?(y/n): ";
+                    cin >> clear_history;
+
+                    if (clear_history == 'y' || clear_history == 'Y') {
+                        clearHistory();
+                    }
 
                     cout << "\nContinue program?(y/n): ";
                     cin >> continue_program;

@@ -23,5 +23,7 @@ namespace calculator {
 
     void showHistory();
 
+    void clearHistory();
+
     bool run();
 }
