@@ -21,5 +21,7 @@ namespace calculator {
 
     void addToHistory(double num1, double num2, char operation, double result);
 
+    void showHistory();
+
     bool run();
 }

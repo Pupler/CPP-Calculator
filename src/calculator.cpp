@@ -30,8 +30,10 @@ namespace calculator {
 
     void addToHistory(double num1, double num2, char operation, double result) {
         history.push_back({num1, num2, operation, result});
+    }
 
-        // cout << history.back().num1 << " " << history.back().operation << " " << history.back().num2 << " = " << history.back().result << endl;
+    void showHistory() {
+        cout << history.back().num1 << " " << history.back().operation << " " << history.back().num2 << " = " << history.back().result << endl;
     }
 
     bool run() {
@@ -55,6 +57,7 @@ namespace calculator {
 
             switch(menuIndex) {
                 case 1:
+                    cout << "\n====CALCULATE====" << endl;
                     cout << "Enter first number: ";
                     cin >> firstNumber;
 
@@ -107,7 +110,7 @@ namespace calculator {
                             break;
                     }
 
-                    cout << "Continue program?(y/n): ";
+                    cout << "\nContinue program?(y/n): ";
                     cin >> continue_program;
 
                     system("clear");
@@ -117,7 +120,16 @@ namespace calculator {
                     break;
                 
                 case 2:
-                    cout << "Soon...\n" << endl;
+                    cout << "\n====LAST CALCULATIONS====" << endl;
+                    showHistory();
+
+                    cout << "\nContinue program?(y/n): ";
+                    cin >> continue_program;
+
+                    system("clear");
+
+                    cin.ignore(1000, '\n');
+
                     break;
 
                 case 3:
