@@ -30,9 +30,15 @@ namespace calculator {
 
     void addToHistory(double num1, double num2, char operation, double result) {
         history.push_back({num1, num2, operation, result});
+        return;
     }
 
     void showHistory() {
+        if (history.empty()) {
+            cout << "History is empty..." << endl;
+            return;
+        }
+        
         cout << history.back().num1 << " " << history.back().operation << " " << history.back().num2 << " = " << history.back().result << endl;
     }
 
