@@ -29,11 +29,33 @@ namespace calculator {
     }
 
     void addToHistory(double num1, double num2, char operation, double result) {
+        int add_operation = 0, subtract_operation = 0, multiply_operation = 0, divide_operation = 0;
+
+        switch(operation) {
+            case '+':
+                add_operation += 1;
+                break;
+            case '-':
+                subtract_operation += 1;
+                break;
+            case '*':
+                multiply_operation += 1;
+                break;
+            case '/':
+                divide_operation += 1;
+                break;
+            default:
+                cout << "An error occurred while checking the operation symbol!" << endl;
+                break;
+        }
+
         history.push_back({num1, num2, operation, result});
         return;
     }
 
     void showHistory() {
+        cout << "\n====HISTORY====" << endl;
+
         if (history.empty()) {
             cout << "History is empty..." << endl;
             return;
@@ -50,6 +72,16 @@ namespace calculator {
         cout << "History was cleaned!" << endl;
     }
 
+    void showStatistics() {
+        cout << "\n====STATISTICS====" << endl;
+        cout << "Number of operations: " << history.size() << endl;
+        
+    }
+
+    void findFavOperation() {
+        
+    }
+
     bool run() {
         char continue_program = 'y';
 
@@ -64,7 +96,8 @@ namespace calculator {
             cout << "Program menu:" << endl;
             cout << "1. Calculator" << endl;
             cout << "2. History" << endl;
-            cout << "3. Exit\n" << endl;
+            cout << "3. Statistics" << endl;
+            cout << "4. Exit\n" << endl;
             cout << "Choose menu index: ";
             cin >> menuIndex;
 
@@ -133,7 +166,6 @@ namespace calculator {
                     break;
                 
                 case 2:
-                    cout << "\n====LAST CALCULATIONS====" << endl;
                     showHistory();
 
                     if (!history.empty()) {
@@ -155,7 +187,19 @@ namespace calculator {
                     break;
 
                 case 3:
-                    cout << "Closing program..." << endl;
+                    showStatistics();
+
+                    cout << "\nContinue program?(y/n): ";
+                    cin >> continue_program;
+
+                    system("clear");
+
+                    cin.ignore(1000, '\n');
+                    
+                    break;
+
+                case 4:
+                    cout << "Closing programm..." << endl;
                     return true;
 
                 default:

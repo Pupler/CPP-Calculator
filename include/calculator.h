@@ -25,5 +25,9 @@ namespace calculator {
 
     void clearHistory();
 
+    void showStatistics();
+
+    void findFavOperation();
+
     bool run();
 }
