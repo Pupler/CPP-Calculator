@@ -6,6 +6,9 @@ using namespace std;
 
 namespace calculator {
 
+    int add_operation = 0, subtract_operation = 0, multiply_operation = 0, divide_operation = 0;
+    char favOperation = '+';
+
     vector<calculation> history;
 
     double add(double a, double b) {
@@ -29,7 +32,6 @@ namespace calculator {
     }
 
     void addToHistory(double num1, double num2, char operation, double result) {
-        int add_operation = 0, subtract_operation = 0, multiply_operation = 0, divide_operation = 0;
 
         switch(operation) {
             case '+':
@@ -75,11 +77,32 @@ namespace calculator {
     void showStatistics() {
         cout << "\n====STATISTICS====" << endl;
         cout << "Number of operations: " << history.size() << endl;
-        
+
+        if (!(history.size() == 0)) {
+            findFavOperation();
+            cout << "Your favorite operation: " << favOperation << endl;
+            return;
+        }
+
+        cout << "Your favorite operation: None" << endl;
     }
 
     void findFavOperation() {
+        int max_count = add_operation;
         
+        if (add_operation > subtract_operation) {
+            max_count = add_operation;
+            favOperation = '+';
+        } if (subtract_operation > max_count) {
+            max_count = subtract_operation;
+            favOperation = '-';
+        } if (multiply_operation > max_count) {
+            max_count = multiply_operation;
+            favOperation = '*';
+        } if (divide_operation > max_count) {
+            max_count = divide_operation;
+            favOperation = '/';
+        }
     }
 
     bool run() {

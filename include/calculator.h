@@ -3,6 +3,8 @@
 #include <iostream>
 
 namespace calculator {
+    extern char favOperation;
+    extern int add_operation, subtract_operation, multiply_operation, divide_operation;
 
     struct calculation {
         double num1;
